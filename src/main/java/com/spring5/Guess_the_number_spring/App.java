@@ -9,6 +9,8 @@ import com.spring5.Guess_the_number_spring.Game.Game;
 import com.spring5.Guess_the_number_spring.Game.GameImpl;
 import com.spring5.Guess_the_number_spring.Numbergenerator.NumberGenerator;
 import com.spring5.Guess_the_number_spring.Numbergenerator.NumberGeneratorimpl;
+import com.spring5.Guess_the_number_spring.message.MessageGenerator;
+import com.spring5.Guess_the_number_spring.message.MessageGeneratorImpl;
 
 /**
  * Hello world!
@@ -33,7 +35,9 @@ public class App {
 
 		Game game = context.getBean("game", GameImpl.class);
 
-		game.reset();
+		// game.reset();
+
+		MessageGenerator msg=context.getBean("messageGenerator",MessageGeneratorImpl.class);
 		
 		context.close();
 

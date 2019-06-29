@@ -13,7 +13,13 @@
 	</bean>
 
 	<bean id="game"
-		class="com.spring5.Guess_the_number_spring.Game.GameImpl">
+		class="com.spring5.Guess_the_number_spring.Game.GameImpl"
+		init-method="reset">
 		<property name="numberGenerator" ref="numberGenerator"></property>
-		</bean>
+	</bean>
+
+	<bean id="messageGenerator"
+		class="com.spring5.Guess_the_number_spring.message.MessageGeneratorImpl">
+		<property name="game" ref="game"></property>
+	</bean>
 </beans>
